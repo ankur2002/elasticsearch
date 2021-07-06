@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Elastics{% endblock %}
+{% block page_content %}
+<div class="page-header">
+    <div> <p>The functions used are:</p>
+          {% for key in functions %} 
+         <p><b>'{{ key }}'</b>  which uses the following parameters: {{ functions[key] }}</p>
+     {% endfor %}
+     </br></br>
+     <p>Here is some information on the terms:</p>
+        {% for key in terms %}
+       <p><b>'{{ key }}'</b> :  {{ terms[key] }}</p>
+     {% endfor %}</div>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+<script src="{{url_for('static',filename='test.js')}}"></script>
+{% endblock %}
+
+

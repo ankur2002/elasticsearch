@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Elastics{% endblock %}
+{% block page_content %}
+<div class="page-header">    
+     <h1>Hello, {% if term %}{{ term }}{% else %}Please enter a value for the term{% endif %}!</h1>
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}

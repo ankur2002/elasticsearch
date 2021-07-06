@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Elastics{% endblock %}
+{% block page_content %}
+<div class="page-header">
+    <div> <h3><p>The functions used are:</p>
+          {% for key in functions %} 
+         <p><b>'{{ key }}'</b>  which uses the following parameters: {{ functions[key] }}</p>
+     {% endfor %}</h3>
+     <h3><p>Here is some information on the terms:</p>
+        {% for key in terms %}
+       <p><b>'{{ key }}'</b> :  {{ terms[key] }}</p>
+     {% endfor %}</h3></div>
+</div>
+<script type=text/javascript>
+$(document).ready(function(){
+  $('.page-header').addClass('.emphasized');
+});
+</script>
+{% endblock %}
+
